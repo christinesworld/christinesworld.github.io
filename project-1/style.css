@@ -1,0 +1,271 @@
+html {
+	scroll-behavior: smooth; /* Makes anchor links scroll smoothly */
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 16px;
+	height: 100%;
+
+  /* font */
+  font-size: 20px;
+	font-family: Plat Mono;
+	letter-spacing: -1px;
+	line-height: 140%;
+}
+
+a {
+	color: #777777;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 48px;
+	line-height: 120%;
+	margin-top: 0px;
+
+	font-family: Affairs;
+	font-weight: normal;
+	letter-spacing: -1px;
+}
+
+.subtitle {
+	font-size: 30px;
+	line-height: 120%;
+
+	font-family: Affairs;
+	font-style: italic;
+	letter-spacing: 0px;
+
+}
+
+h2 {
+	font-size: 36px;
+	line-height: 120%;
+	margin-bottom: 0.5em;
+
+	font-family: Affairs;
+	font-weight: normal;
+	letter-spacing: 0px;
+}
+
+h3 {
+	font-size: 26px;
+	line-height: 140%;
+	margin-top: 0px;
+	margin-bottom: 5px;
+
+	font-family: Affairs;
+	font-weight: normal;
+	letter-spacing: 0px;
+}
+
+
+/* container */
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+	justify-content: space-between;
+
+  gap: 8px;
+	/* background-color: #f9917b; */
+
+  max-width: 100%;
+}
+
+.container div {
+
+}
+
+
+
+
+
+/* sidebar */
+
+.sidebar {
+	flex: 1 0 18%;
+	/* margin-right: auto; */
+  /*HELP: how to make sticky?*/
+}
+
+.sidebar.left {
+	min-width: 200px;
+
+}
+
+.sidebar.left div {
+	max-width: 200px;
+	margin-right: 0;
+}
+
+.sidebar.right {
+	min-width: 0;
+
+}
+
+.sidebar.right div {
+	max-width: 200px;
+	margin-left: auto;
+	position: sticky;
+	top: 16px;
+}
+
+
+.glossaryTerm {
+	width: 200px;
+	display: inline-block;
+
+}
+
+.glossaryTermIcon {
+	position: absolute;
+	right: 0px;
+	display: inline-block;
+}
+
+.glossaryDef {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 140%;
+	font-style: italic;
+}
+
+.glossaryDefPad {
+	padding-bottom: 1em;
+}
+
+
+
+
+
+/* bodycopy */
+
+#bodycopy {
+	flex: 1 0 60%;
+	min-width: 0;
+	max-width: 800px;
+	/*HELP: how to make centered in flex box?*/
+  line-height: 140%;
+  padding-bottom: 96px;
+}
+
+#bodycopy div {
+  padding-bottom: 24px;
+}
+
+.speaker1 {
+  padding-right: 40%;
+}
+
+.speaker2 {
+  padding-left: 40%;
+}
+
+
+
+
+
+/* left & right static nav */
+
+.nav {
+	height: 70%;
+	position: fixed;
+
+}
+
+.nav.left{
+	top: 16px;
+	left: 16px;
+	max-width: 200px;
+}
+
+.nav.right{
+	top: 0;
+	right: 0px;
+}
+
+.scroll {
+	background-color: black;
+	width: 16vw;
+	height: 3px;
+
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+
+
+
+
+
+/*img treatment*/
+
+.imgContainer {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+.appear {
+	display: none;
+}
+*/
+
+.imgFormat {
+	position: fixed;
+	max-width: 600px;
+	max-height: 100%;
+	left:20%;
+
+	mix-blend-mode: multiply;
+	opacity: 100%;
+}
+
+.imgCaption {
+	position: fixed;
+	bottom: calc(2em - 20px);
+	left: 16px;
+	max-width: 200px;
+
+
+	font-size: 14px;
+	line-height: 120%;
+	font-style: italic;
+	opacity: 40%;
+
+}
+
+
+
+
+/*fonts*/
+
+@font-face {
+  font-family: Plat Mono;
+  font-weight: normal;
+  src: url(fonts/PlatMono-Regular.otf);
+}
+
+
+@font-face {
+  font-family: Affairs;
+  font-weight: normal;
+  src: url(fonts/routed-gothic-narrow.ttf);
+}
+
+@font-face {
+  font-family: Affairs;
+  font-style: italic;
+  src: url(fonts/routed-gothic-narrow-italic.ttf);
+}
