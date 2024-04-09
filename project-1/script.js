@@ -2,13 +2,17 @@ $(function() {
 
 function help() {
 
+  var scrollBodyY = $('#bodycopy').scrollTop();
+  console.log("scrollBodyY: " + scrollBodyY);
+
   //scroll bar
-  var bodyHeight = $(document).height();
-  var imgScrollPos = scrollY * window.innerHeight / bodyHeight;
-  var scrollPercent = scrollY / (bodyHeight - window.innerHeight);
+  var bodyHeight = $('#bodycopy') [0].scrollHeight;
+  var imgScrollPos = scrollBodyY * window.innerHeight / bodyHeight;
+  var scrollPercent = scrollBodyY / (bodyHeight - window.innerHeight);
 
-  $('.scroll').css({top: 40 + (scrollY * window.innerHeight / (bodyHeight - window.innerHeight)) - (scrollPercent * 80) + 'px'});
+  $('.scroll').css({top: 40 + (scrollBodyY * window.innerHeight / (bodyHeight - window.innerHeight)) - (scrollPercent * 80) + 'px'});
 
+  console.log('---------');
 
   //img appearing
   $('.imgContainer').each(function(){
@@ -48,7 +52,6 @@ function help() {
       ( $(this).offset().top) > $(window).scrollTop()
       && $(window).scrollTop() > ( $(this).offset().top - window.innerHeight )
       ){
-      console.log("based");
       $(this).trigger('play');
     } else {
       $(this).trigger('pause');
@@ -63,14 +66,10 @@ function help() {
     const thisH2Text = $(this).text();
     const nextH2Text = $(this).nextUntil('h2').last().next().text();
 
-    console.log(scrollY > (thisH2.offset().top - window.innerHeight)
-      &&  scrollY < (nextH2.offset().top - window.innerHeight));
-    //console.log('---BREAK---');
-
-    if ( scrollY > (thisH2.offset().top - window.innerHeight/2)
-      &&  scrollY < (nextH2.offset().top - window.innerHeight/2)
+    console.log(thisH2.offset().top);
+    if ( scrollBodyY > (thisH2.offset().top - window.innerHeight/2 + scrollBodyY)
+      &&  scrollBodyY < (nextH2.offset().top - window.innerHeight/2 + scrollBodyY)
       ){
-      console.log($('.scrollText').text(thisH2));
       $('.scrollText').text(thisH2Text);
       $('.scrollText').css({top: "-" + ($('.scrollText').height() / 2) + "px"});
     } else {
@@ -79,6 +78,10 @@ function help() {
     }
     //console.log($('.scrollText').height());
   });
+
+  $('.bodyContainer').css('left', ($('#bodycopy').offset().left + 30));
+  $('.bodyContainer').width($('#bodycopy').outerWidth());
+
 
 };
 
@@ -91,7 +94,6 @@ setInterval(help, 1);
 $('.mute').click(function(){
   if( $('video').prop('muted') ) {
     $("video").prop('muted', false);
-    console.log('click');
     $('.mute').text('mute all');
   } else {
     $("video").prop('muted', true);
@@ -101,7 +103,6 @@ $('.mute').click(function(){
 
 $('.restart').click(function(){
   var video = $(this).parent().siblings('video');
-  console.log('restartclick');
 
   video [0].currentTime = 0;
 });
