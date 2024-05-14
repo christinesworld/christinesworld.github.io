@@ -1,0 +1,393 @@
+html {
+	scroll-behavior: smooth; /* Makes anchor links scroll smoothly */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Routed Gothic Narrow;
+  font-size: 16px;
+
+  background-color: #B1B1B1; /*B1B1B1 A8A8A8*/
+}
+
+p {
+  display: inline;
+}
+
+button {
+  font-size: 11px;
+
+  /* default styling */
+  border: 1px solid #8f9c63;
+  border-radius: 4px;
+  padding: 2px 5px 2px 5px;
+  text-align: center;
+}
+
+
+.term {
+  display: inline;
+  color: MediumVioletRed;
+}
+
+.term:hover {
+  text-decoration: underline;
+}
+
+/* ///////////////////////// SITE LAYOUT ///////////////////////// */
+
+/*overall site layout*/
+.container {
+  display: flex;
+  flex-flow: row;
+  height: 100vh;
+}
+
+
+/* ///////////////////////// L SIDEBAR ///////////////////////// */
+
+
+/* flex sidebar / left side */
+.sidebarLeft {
+  flex: 0 0 18%;
+	min-width: 250px;
+
+  background-color: pink;
+  padding: 5px;
+}
+
+.sidebarHead {
+  text-align: center;
+  /* font-size: 24px; */
+  border-bottom: solid;
+  border-width: 1.5px;
+}
+
+.sidebarHead > button {
+  margin: 3px -4px 8px 8px;
+}
+
+.sidebarTitle {
+  font-size: 48px;
+  display: inline-block;
+}
+
+.sidebarEntry {
+  display: grid;
+  grid-template-columns: 2fr 10fr 0.5fr;
+  /* grid-template-rows: 1fr 1fr; */
+  padding: 5px 5px 5px 5px;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid;
+  border-width: 1.5px;
+}
+
+.entryNum {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.entryName {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.entryDesc {
+  grid-column: 2 / span 1;
+  grid-row: 2;
+  display: none;
+  padding: 7px 0px 7px;
+}
+
+.entryX{
+  grid-column: 3;
+  grid-row: 1;
+  text-align: right;
+}
+
+
+/* ///////////////////////// R MAIN GUI ///////////////////////// */
+
+/* flex main content / right side */
+.main {
+  flex: 1 1 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+.imgBg {
+  position: absolute;
+  top: 35px;
+  z-index: -1;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  height: 97vh;
+}
+
+.landingVid {
+
+}
+
+.titleBar {
+  background-color: #F5F5F5;
+  height: 35px;
+}
+
+.titleBar > button {
+  margin: 8px -4px 8px 8px;
+}
+
+.titleBarButton {
+  background-color: #BBBBBB;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+/* ///////////////////////// LANDING NAV ///////////////////////// */
+
+.landing {
+  padding: 5px;
+  z-index: 1;
+  /* background-color: #00000000; */
+}
+
+.landingNav {
+  position: absolute;
+  left: 0;
+}
+
+
+/* landing content */
+.landingContent {
+  height: calc(100vh - 35px);
+  position: absolute;
+  top: 35px;
+  overflow: auto;
+
+  font-size: 48px;
+  line-height: 125%;
+  padding: 40vh 30px 0px;
+  color: #0000cc; /*darker default blue*/
+
+}
+
+.landingText {
+  /* mix-blend-mode: difference; */
+}
+
+
+/* nav hover  */
+.navText {
+  position: fixed;
+  right: 0;
+  padding-top: 3vh;
+  padding-right: 5vw;
+
+  font-size: 30px;
+  line-height: 125%;
+  display: inline-block;
+}
+
+.navText > div {
+  padding-bottom: 5px;
+}
+
+.navText.sublabel {
+  padding-right: 20vw;
+  text-align: right;
+}
+
+.navText.sublabel > div {
+
+}
+
+.highlightedText {
+  color: MediumVioletRed;
+}
+
+
+
+.navBoxes {
+  position: absolute;
+}
+
+.hoverZone {
+  background-color: #FFFFFF66;
+  position: absolute;
+  border: 1px solid #FFFFFFBB;
+}
+
+/* 937px /97 = 200/x --> 200*97/937 = x */
+
+.hoverZone.armLeft {
+  width: 20.70vh; /*200px*/
+  height: 32.61vh; /*315px*/
+  left: 20.29vh; /*196px*/
+  top: 17.60vh; /*170px*/
+}
+
+.hoverZone.armRight {
+  width: 12.94vh; /*125px*/
+  height: 25.88vh; /*250px*/
+  left: 57.97vh; /*560px*/
+  top: 24.85vh; /*240px*/
+}
+
+.hoverZone.body {
+  width: 23.81vh; /*230px*/
+  height: 49.69vh; /*480px*/
+  left: 36.75vh; /*355px*/
+  top: 15.53vh; /*150px*/
+
+}
+
+.hoverZone.head {
+  width: 18.17vh; /*175px*/
+  height: 13.46vh; /*130px*/
+  left: 39.34vh; /*380px*/
+  top: 2.59vh; /*25px*/
+}
+
+.hoverZone.footer {
+  width: 19.67vh; /*190px*/
+  height: 29.8vh; /* 30.02 */ /*290px*/
+  left: 38.30vh; /*370px*/
+  top: 64.18vh; /*620px*/
+}
+
+
+
+
+/* ///////////////////////// PAGES ///////////////////////// */
+
+.pages {
+}
+
+.page {
+  height: calc(100vh - 35px);
+  position: absolute;
+  top: 35px;
+  overflow: auto;
+
+  font-size: 30px;
+  line-height: 125%;
+  color: #0000cc; /*darker default blue*/
+
+  display: flex;
+  width: 100%;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 30px 0px 15px;
+}
+
+sub {
+  margin: 0;
+  font-size: 30px;
+  font-style: italic;
+}
+
+
+.pageContent {
+  flex: 1 0 80%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.pageText {
+  padding: 0 30px 0;
+  max-width: 900px;
+}
+
+.pageNav {
+  position: fixed;
+  top: 35;
+  right: 0;
+  z-index: 5;
+}
+
+
+.scroll {
+	background-color: MediumVioletRed;
+	width: 8vw;
+	height: 3px;
+
+	position: absolute;
+	right: 0;
+  z-index: 10;
+}
+
+.scrollText {
+	font-family: Routed Gothic Narrow;
+	font-size: 16px;
+	letter-spacing: 0px;
+	line-height: 120%;
+	width: 100px;
+
+	color: #f93373;
+
+	position: absolute;
+	top: -1em;
+	right: 8.5vw;
+}
+
+.navImg {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 16px;
+}
+
+
+/* ///////////////////////// HIDE / UNHIDE CLASSES ///////////////////////// */
+
+.hideOpacity { /* YES visible to computer; NOT visible to human */
+  opacity: 0;
+}
+
+.unhideOpacity {
+  opacity: 1;
+}
+
+.hideDisplay { /* NOT visible to computer; NOT visible to human */
+  display: none;
+}
+
+/* .unhideDisplay {
+  display: inline-block;
+} */
+
+
+/* ///////////////////////// FONTS ///////////////////////// */
+
+@font-face {
+  font-family: Routed Gothic Narrow;
+  font-weight: normal;
+  src: url(fonts/routed-gothic-narrow.ttf);
+}
+
+@font-face {
+  font-family: Routed Gothic Narrow;
+  font-style: italic;
+  src: url(fonts/routed-gothic-narrow-half-italic.ttf);
+}
+
+@font-face {
+  font-family: Arial Narrow;
+  font-weight: normal;
+  src: url(fonts/arialnarrow.ttf);
+}
