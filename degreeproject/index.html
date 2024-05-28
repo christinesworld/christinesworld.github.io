@@ -11,22 +11,28 @@
 <div class="container">
 
   <!-- sidebar -->
-  <div class="sidebarLeft">
+  <div class="sidebarLeft hideDisplay">
     <div class="sidebarHead">
       <button>save</button>
-      <button>clear all</button>
+      <button class="clear">clear all</button>
       <br>
-      <button class="play" style="font-size: 20px">⏵</button> <button style="font-size: 20px">⏹</button>
-      <!-- ⏮ ⏯ ⏭ <br> -->
+      <button class="media play">&#9205;</button>
+      <button class="media stop">&#9209;</button>
+      <button class="glossary">glossary</button>
     </div>
 
     <!-- sample sidebar entry -->
-    <div class="sidebarEntry">
-      <div class="entryNum">3</div>
-      <div class="entryName">Example</div>
-      <div class="entryX">×</div>
-      <div class="entryDesc">The most popular Vocaloid character. She is marketed as a 16-year-old virtual idol and is often known for her iconic long blue twintails. She is also known by her code-name “CV01.”</div>
+    <div class="sidebarEntries">
+
+      <div class="sidebarEntry">
+        <div class="entryNum">0</div>
+        <div class="entryName">Hatsune Miku</div>
+        <div class="entryX">&#215;</div>
+        <div class="entryDesc" style="display: none">The most popular Vocaloid character. She is marketed as a 16-year-old virtual idol and is often known for her iconic long blue twintails. She is also known by her code-name “CV01.”</div>
+      </div>
+
     </div>
+
   </div>
 
 
@@ -35,44 +41,70 @@
 
     <!-- background image -->
     <div class="imgBg">
-      <video class="nav" autoplay muted>
+      <span style="position: fixed; width: 100vw; height: 100vh; mix-blend-mode: hard-light;"></span>
+
+      <video class="nav autoplay" muted>
         <source src="assets/nav.mp4" type="video/mp4">
       </video>
-      <video class="armLeft hideDisplay" autoplay muted>
+
+      <video class="page armLeft hideDisplay" muted>
         <source src="assets/arm_left.mp4" type="video/mp4">
       </video>
+
+      <video class="page armRight hideDisplay" muted>
+        <source src="assets/arm_right.mp4" type="video/mp4">
+      </video>
+
+      <video class="page footer hideDisplay" muted>
+        <source src="assets/footer.mp4" type="video/mp4">
+      </video>
+
+      <video class="page head hideDisplay" muted>
+        <source src="assets/head.mp4" type="video/mp4">
+      </video>
+
+      <video class="page body hideDisplay" muted>
+        <source src="assets/body.mp4" type="video/mp4">
+      </video>
+
     </div>
 
     <!-- title bar ui -->
     <div class="titleBar">
-      <button class="home">home</button>
-      <button class="mute">mute all</button>
+      <button class="home">BECOMING HATSUNE MIKU</button>
+      <button class="hidePlaylist">show playlist</button>
+
+
     </div>
 
     <!-- LANDING -->
     <div class="landing">
       <div class="landingContent">
-        <div class= "landingText"> Within twenty-four hours of landing in Tokyo for the first time, I took the bullet train some 200+ miles west to Osaka to celebrate <span class="term 1">Hatsune Miku</span>’s sixteenth birthday. I watched from the far back corner of a warehouse amongst thousands of people as a life-sized hologram of a teal-haired teenage girl materialized onto stage. For the next few hours, this hologram sang and danced to a live band as fans cheered and waved colored light sticks in unison. Although it was <span class="term 1">Hatsune Miku</span>’s sixteenth birthday, she had actually been sixteen for the past sixteen years and would continue to be sixteen for the rest of eternity. Miku was created in 2007 by <span class="term 2">Crypton Future Media Inc.</span> as a <span class="term 3">Vocaloid</span>, a digital synthesizer software that allows users to create artificial singing voices. <span class="term 1">Miku</span> is the twin-tailed virtual idol representing a voice bank provided by actress Saki Fujita. Her age—sixteen years old—is one of only six parameters officially specified about her. The remainder of her character, including her background, personality, and motivations, is entirely up to fans to decide. <span class="term 1">Miku</span> has over 100,000 songs and 1,000,000 artworks born out of a vibrant participatory community of fan creators. Despite this, the vast majority of fans do not make any money from their creations while Miku herself generates millions in revenue. This is possible due to <span class="term 2">Crypton</span>’s custom PiaPro copyright laws which allow free usage of <span class="term 1">Miku</span>’s character as long as the user does not profit from it. These policies enable <span class="term 2">Crypton</span> to use <span class="term 1">Miku</span> to secure corporate partnerships with companies like Dominoes Pizza, Toyota, and Google while outsourcing the labor of developing her image to <span class="term 1">Miku</span>’s fanbase. </div>
+        <div class= "landingText"> Hatsune Miku is by nature contradictory. Her <span class="term 95 1">Vocaloid <span class="num">1</span></span> software has gone through great lengths to create a technology that mimics a natural human voice. Her model too, used in live shows and official music videos, evokes the mass and mobility of a life-sized teenage girl. At the same time, her skin lacks texture, her mouth is impossibly small, and she is eternally young. As Daniel Black writes, the virtual idol represents a “fantasy of the body as a pure, impermeable exteriority, into which nothing may be drawn and from which nothing may emanate.” Miku has no guts, no organs, no blood, and she does not age; as a smooth and seamless surface, she is free from the unruliness of biology that might make her unpure or dirtied. This fantasy of the body is one in which there are no surprises, where “it quite clearly has ‘nothing to hide.’” </div>
 
         <div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
       </div>
 
       <div class="landingNav hideDisplay">
+        <div class="navText">
+          <div class="nav label head"> &lt; HEAD &gt;</div>
+          <div class="nav label body"> &lt; BODY &gt;</div>
+          <div class="nav label armLeft"> &lt; ARM_LEFT &gt;</div>
+          <div class="nav label armRight"> &lt; ARM_RIGHT &gt;</div>
+          <div class="nav label footer"> &lt; FOOTER &gt;</div>
+          </div>
 
         <div class="navText sublabel">
-          <div class="nav head hideOpacity"> text </div>
-          <div class="nav body hideOpacity"> text</div>
-          <div class="nav armLeft hideOpacity"> Essay: Becoming Hatsune Miku </div>
-          <div class="nav armRight hideOpacity"> text</div>
-          <div class="nav footer hideOpacity"> text</div>
-        </div>
-
-        <div class="navText">
-          <div class="nav head"> &lt; HEAD &gt;</div>
-          <div class="nav body"> &lt; BODY &gt;</div>
-          <div class="nav armLeft"> &lt; ARM_LEFT &gt;</div>
-          <div class="nav armRight"> &lt; ARM_RIGHT &gt;</div>
-          <div class="nav footer"> &lt; FOOTER &gt;</div>
+          <div class="nav sublabel head hideOpacity">
+            <span>About this project</span></div>
+          <div class="nav sublabel body hideOpacity">
+            <span>Essay: Becoming Hatsune Miku </span></div>
+          <div class="nav sublabel armLeft hideOpacity">
+            <span>Conversation with Ryan</span></div>
+          <div class="nav sublabel armRight hideOpacity">
+            <span>Conversation with <br>Ash & Nour</span></div>
+          <div class="nav sublabel footer hideOpacity">
+            <span>Glossary of Terms</span></div>
         </div>
 
 
@@ -98,29 +130,446 @@
     </div>
 
 
-    <!-- PAGE ARM LEFT -->
+    <!-- PAGE CONTENT -->
     <div class="pages hideDisplay">
 
-    <div class="page armLeft hideDisplay">
+    <!-- head -->
+    <div class="page head hideDisplay">
       <div class="pageContent">
         <div class="pageText">
-          <h1>Becoming Hatsune Miku</h1>
-          <sub>Virtual Cyborg Identity in the Vocaloid Fan Community</sub>
+          <br><br><br>
+          <h1>Introduction</h1>
+          <sub></sub>
           <br><br><br><br><br><br><br><br><br><br><br><br>
-          <p> Within twenty-four hours of landing in Tokyo for the first time, I took the bullet train some 200+ miles west to Osaka to celebrate <span class="term 1">Hatsune Miku</span>’s sixteenth birthday. I watched from the far back corner of a warehouse amongst thousands of people as a life-sized hologram of a teal-haired teenage girl materialized onto stage. For the next few hours, this hologram sang and danced to a live band as fans cheered and waved colored light sticks in unison. Although it was <span class="term 1">Hatsune Miku</span>’s sixteenth birthday, she had actually been sixteen for the past sixteen years and would continue to be sixteen for the rest of eternity. Miku was created in 2007 by <span class="term 2">Crypton Future Media Inc.</span> as a <span class="term 3">Vocaloid</span>, a digital synthesizer software that allows users to create artificial singing voices. <span class="term 1">Miku</span> is the twin-tailed virtual idol representing a voice bank provided by actress Saki Fujita. Her age—sixteen years old—is one of only six parameters officially specified about her. The remainder of her character, including her background, personality, and motivations, is entirely up to fans to decide. <span class="term 1">Miku</span> has over 100,000 songs and 1,000,000 artworks born out of a vibrant participatory community of fan creators. Despite this, the vast majority of fans do not make any money from their creations while Miku herself generates millions in revenue. This is possible due to <span class="term 2">Crypton</span>’s custom PiaPro copyright laws which allow free usage of <span class="term 1">Miku</span>’s character as long as the user does not profit from it. These policies enable <span class="term 2">Crypton</span> to use <span class="term 1">Miku</span> to secure corporate partnerships with companies like Dominoes Pizza, Toyota, and Google while outsourcing the labor of developing her image to <span class="term 1">Miku</span>’s fanbase.</p>
+          <p> Hatsune Miku is by nature contradictory. Her <span class="term 95 1">Vocaloid <span class="num">1</span></span> software has gone through great lengths to create a technology that mimics a natural human voice. Her model too, used in live shows and official music videos, evokes the mass and mobility of a life-sized teenage girl. At the same time, her skin lacks texture, her mouth is impossibly small, and she is eternally young. As Daniel Black writes, the virtual idol represents a “fantasy of the body as a pure, impermeable exteriority, into which nothing may be drawn and from which nothing may emanate.”<span class="cit 1">I</span> Miku has no guts, no organs, no blood, and she does not age; as a smooth and seamless surface, she is free from the unruliness of biology that might make her unpure or dirtied. This fantasy of the body is one in which there are no surprises, where “it quite clearly has ‘nothing to hide.’”<span class="cit 2">II</span></p>
           <br><br>
-          <p> Yet, many fans continue to engage with <span class="term 1">Miku</span> despite this exploitation. Stina Marie Hasse Jørgensen, assistant professor at the IT University of Copenhagen, proposes that just participating in the community is enough for fans who are “awarded accordingly with entertainment and online recognition, as well as having their fan-based desires met by an ever-changing, continually updated idol.” While this may explain <span class="term 1">Miku</span>’s large fanbase, it leaves questions as to why fans choose to engage with <span class="term 1">Miku</span> rather than with other media-centered fanbases for anime characters or real-life idols. By interrogating <span class="term 1">Miku</span> beyond her commodity aesthetics, one can begin to understand how she provides strategies to subvert hierarchies of control. Although inevitably subject to the commercial interests of the music industry, Vocaloid’s crowd-sourced foundation offers channels of resistance by allowing community members to elaborate their own desires through digital idols like <span class="term 1">Miku</span>. This engenders <span class="term 1">Miku</span> with fluid signifiers that transcend traditional boundaries of the body, allowing fans to disrupt their relationship to productive consumption through the posthuman affordances of the virtual. </p>
-          <br><br><br><br>
+          <p> Beyond these physical characteristics, Miku’s image becomes vastly more complex. As a vessel for human affect, she is not only subject to but a product of the porous relational network of fan-created media. Fans become both consumers and creators of Miku’s image, blurring the distinction between Miku as an independent entity and the fans that project their fantasies onto her. Nowhere is this tension between Miku’s digital seamlessness and her messy interrelational underpinnings more visible than in the physical embodiment fans of Miku herself through <span class="term 11 2">cosplay <span class="num">2</span></span>. The cosplay is an attempt to recreate the two-dimensional character in real life, not just visually, but also through their mannerisms. Cosplayers may imitate the poses of characters and repeat popular catch phrases to generally emulate the character’s “aura.”<span class="cit 3">III</span> As a result, the cosplay comes to occupy a “liminal existence between fantasy and reality” that straddles the digital and the material.</p>
+          <br><br>
+
+          <div class="imgContainer">
+      			<img src="assets/scan_2.png" class="imgFormat">
+      			<div class="imgCaption">The first photogrammetry scan I attempted had large gaps where I was wearing black fabric. My legs were almost entirely missing.</div>
+      		</div>
+
+
+          <h1> Becoming Hatsune Miku </h1>
+          <p> I am fascinated by this contradiction between Miku’s flattened virtual image and the human affective labor that powers it. I explore this contradiction at the site of the hybrid virtual body through a cheap, ready-made Hatsune Miku costume and wig. Cosplays can range wildly in execution, with ones that most closely emulate the character generally requiring more custom building and craftsmanship. These cosplays often involve an excruciating level of detail that most closely attempts to translate the seamless fantasy form into real life. On the other end of the spectrum, the casual cosplay is full of seams that reveal the discrepancies of the digital character in human form. These often take shape in ill-fitting costumes (often a product of ready-made garments), unstyled wigs, and amateur technique. </p>
+
+
+          <br><br>
+          <p>This scruffy translation of the virtual character on the physical body is brought back to the virtual through several full-body 3D scans of myself in the cosplay. I used photogrammetry technology through Agisoft Metashape to construct this model through photos taken by a friend through my phone camera. The software did well to capture my general form but struggled with some more of the detailed areas—the black fabric in Miku’s costume around the forearms, skirts, and stockings rendered questionably, if at all (this is a known weakness of photogrammetry software); and random visual artifacts attached itself to the model in ambiguous globs. The software also left a rough, lumpy texture throughout the surface of the model that seemed to emphasize the materiality of the scan and its subsequent unruliness.</p>
+          <br><br>
+
+          <div class="imgContainer">
+      			<img src="assets/figure_5.png" class="imgFormat">
+      			<div class="imgCaption">The Artist Masterpiece Plus Figure Hatsune Miku: Birthday 2023 Ver.</div>
+      		</div>
+
+          <p>In addition to cosplay, collectable <span class="term 6 3">anime figures <span class="num">3</span></span> are popular within anime, video game, and adjacent spaces as real-life statues of fictional characters. These figures are typically at a smaller-than-life scale, contain a high level of detail, and come in various poses that, similar to cosplay, attempt to translate the aura of a character into material form. Miku alone has hundreds of figures where she is depicted in a variety of costumes, hairstyles, and dynamic poses that can get incredibly detailed and complex. </p>
+          <br><br>
+          <p>Following the language of these anime figures, I retranslated my 3D scan back into the material by 3D-printing it as a 1:6 scale figure with gray PLA. The figure itself stands stiffly with both arms out at a 45 degree angle—due to the limitations of my photogrammetry technique, this pose was one of the only ones I could hold long enough to ensure an effective scan. The resulting statue refuses the smooth, pristine appearance of typical anime figurines with its excessively bumpy surface and unarticulated, bulbous forms. The contours of my body have been melted away into masses of visual detritus that become especially formless in the areas I donned black fabric, where the photogrammetry software struggled to read me. </p>
+          <br><br>
+          <p>These imperfect translations generate a form increasingly populated by digital and material noise. As a <span class="ital">moe</span> character, Miku’s image is one that always returns to the body. As she travels between her virtual representations and the outside associations channeled into her image by fans, the purity of her original image is ruptured by the hybridity of her crowd-sourced form. She is at once disembodied and embodied—an abstract, two-dimensional image free of biology, and a network of affective experience. My imitation of her hybrid image highlights this contradiction central to her image.</p>
+          <br><br>
+
+          <div class="imgContainer">
+      			<video class="imgFormat" muted loop>
+      	  		<source src="assets/printing.mp4" type="video/mp4">
+      			</video>
+      			<div class="imgCaption">
+      				<button class="mute">unmute all</button>
+      				<button class="restart">restart</button> <br> <br>
+      				It took around ten hours to print this figure, which is 9.5 inches tall. I decided to print it upright despite the excessive amount of support material in order to capture the bumpy texture of the 3D model.
+      			</div>
+      		</div>
+
+
+          <h1>The Website</h1>
+          <p> The website serves a digital thesis book for my degree project and comes with a physical print component an accompanying 3D-printed figure. I use the scan of my body in cosplay as the navigation system for the website, flipping the body metaphors in HTML tags back onto the human figure. Each section of the body corresponds with a different area of my process: the central essay of my research is the torso (&lt;BODY&gt;), the interviews I conducted are the arm appendages (&lt;ARM_LEFT&gt; and &lt;ARM_RIGHT&gt;), the index of glossary terms and references are the legs and feet (&lt;FOOTER&gt;), and the meta of it is the head (&lt;HEAD&gt;). The print version of the website similarly separates these sections into individual books, with each book containing an insert of a life-size fold-out print of the associated body part. The books are housed in an acrylic plexiglass book case with a custom hole structure on the front to hold the 3D-printed figure.</p>
+          <br><br>
+          <p>The glossary system is an essential part of this website. Much of the site’s content is full of references that reflect the network of information and knowledge inherent to the Vocaloid community. All relevant terminology throughout the text (highlighted in blue) can be clicked to reveal a short description that is added to the Playlist on the left hand side, along with a number denoting the order of its appearance in the text. You can choose to add whichever and however many terms to your Playlist as you like and send them to yourself for later reference. The &lt;FOOTER&gt; page compiles every term as well as their appearances throughout the site for reference.</p>
+          <br><br>
+
+          <h1> IFAQ (InFrequently Asked Questions)</h1>
+          <p class="ital">How do I learn more about Vocaloid?</p><br>
+          <p>There is truly an incredible amount of Vocaloid content out there that can initially be daunting to tackle. My recommendation is to find a few songs that you like and see what else the producers of those songs have created. Each producer has their own songwriting style and way of tuning the Vocaloid that you may find yourself partial to. This spreadsheet is an excessively comprehensive fan-made list of some of Vocaloid’s most important songs that you can pick through. You can also start from some of the recommendations I’ve left below.</p><br>
+          <br>
+          <p class="ital">What are your favorite Miku songs?</p><br>
+          <p><span class="term 85 4 ital"> &#9835; The Disappearance of Hatsune Miku <span class="num">4</span></span> by cosMo feat. Hatsune Miku</p><br>
+          <p><span class="term 18 5 ital">&#9835; Ghost Rule <span class="num">5</span></span> by <span class="term 15 6">DECO*27 <span class="num">6</span></span> feat. Hatsune Miku</p><br>
+          <p>Spinning Sky Rabbit by <span class="term 60 7">Orangestar <span class="num">7</span></span> feat. Hatsune Miku</p><br>
+          <p>Macaron by ATOLS feat. Hatsune Miku</p><br>
+          <p>Penguin’s Detour by Hayashida feat. Hatsune Miku</p><br>
+          <p>Miku by Anamanaguchi feat. Hatsune Miku</p><br>
+          <p>Brain-Fluid Explosion Girl by rerurili feat. Hatsune Miku</p><br>
+          <br>
+          <p class="ital">What are your favorite songs with other Vocaloid?</p><br>
+          <p>Dappou Rock by <span class="term 56 8">Neru <span class="num">8</span></span> feat. <span class="term 36 9">Kagamine Len <span class="num">9</span></span> </p><br>
+          <p>Fools Are Attracted to Anomaly by Utsu-P feat. <span class="term 37 10"> Kagamine Rin <span class="num">10</span></span> </p><br>
+          <p>Drowning in a Wave of Sadness by Neru feat. <span class="term 36 11"> Kagamine Len <span class="num">11</span></span> </p><br>
+          <p>Inokori Sensei by Honeyworks feat. flower</p><br>
+          <p>Night Sky Patrol of Tomorrow by <span class="term 60 12"> Orangestar <span class="num">12</span></span>  feat. <span class="term 30 13"> IA <span class="num">13</span></span>  </p><br>
+          <p>Lost Time Memory by <span class="term 33 14"> Jin <span class="num">14</span></span>  feat. <span class="term 30 15"> IA <span class="num">15</span></span> </p><br>
+          <p>Totemo Itai Itagaritai by EZFG feat. VY1(v3) and VY2</p><br>
+          <br>
+          <p class="ital">Who are your favorite utaite?</p><br>
+          <p>Wolpis Kater, Ikasan, Glutamine, un:c, Gero</p><br>
+          <br>
+          <p class="ital">Who are your favorite producers?</p><br>
+          <p><span class="term 56 16"> Neru <span class="num">16</span></span>, <span class="term 60 17"> Orangestar <span class="num">17</span></span> , Utsu-P, EZFG, <span class="term 15 18"> DECO*27 <span class="num">18</span></span> (pre-2017)</p><br>
+          <br>
+          <h1>Acknowledgements</h1>
+          <p> I am immensely grateful to Minkyoung Kim and Ed Brown for all their assistance with the website coding and 3D printing, two things I was relatively new to before this project. Thank you to Xiangli Ding and Yasi Alipour for your help with the first iteration of my essay, and to Kenneth Berger for making me think a lot harder about everything. Thanks to Pouya Ahmadi for helping me see this project to the end, despite its ups and downs. Thanks also to Ryan Yan, Ash Ma, and Nour Wu for your generosity in letting me interview you for way longer than I had planned to. I’d also like to shoutout Ian Rider for helping us get the Magical Mirai 2023 tickets in Japan and convincing us to plan our trip around it. It was definitely worth it.</p> <br>
+          <br>
+          <p> Finally, a special thank you to Michelle Ding, Lucia Li, and Steven Long. I am endlessly, endlessly grateful for all your assistance, advice, and mental support—this truly wouldn’t have been possible without your help.</p><br>
+          <br>
+
+          <h1>Bibliography</h1>
+          <p>Black, Daniel. “The Virtual Ideal: Virtual Idols, Cute Technology and Unclean Biology.” Continuum 22, no. 1 (February 2008): 37–50. https://doi.org/10.1080/10304310701642048.</p><br>
+          <br>
+          <p>Galbraith, Patrick W. “Moe: Exploring Virtual Potential in Post-Millennial Japan.” electronic journal of contemporary japanese studies, October 31, 2009. https://www.japanesestudies.org.uk/articles/2009/Galbraith.html.</p><br>
+
+
+          <br><br>
         </div>
       </div>
+
+      <div class="pageCit">
+        <div class="cit 1"> <sup>I</sup> Daniel Black,“The Virtual Ideal: Virtual Idols, Cute Technology and Unclean Biology.” Continuum 22, no. 1 (February 2008): 37–50. https://doi.org/10.1080/10304310701642048. </div>
+        <div class="cit 2"> <sup>II</sup> Ibid. </div>
+        <div class="cit 3"> <sup>III</sup> Patrick W. Galbraith, “Moe: Exploring Virtual Potential in Post-Millennial Japan,” electronic journal of contemporary japanese studies, October 31, 2009, https://www.japanesestudies.org.uk/articles/2009/Galbraith.html. </div>
+      </div>
+
+      <div class="pageEmpty"></div>
 
       <div class="pageNav">
         <div class="scroll">
     			<div class="scrollText"></div>
     		</div>
-    		<div> <img src="assets/nav.png" class="navImg" style="height: 97vh"></div>
+    		<div> <img src="assets/nav.png" class="scrollImg" style="height: 97vh"></div>
       </div>
     </div>
+    <!-- end of head -->
+
+    <!-- body -->
+    <div class="page body hideDisplay">
+      <div class="pageContent">
+        <div class="pageText">
+          <br><br>
+          <h1>Becoming Hatsune Miku</h1>
+          <sub>Posthuman Hybrid Identity, Virtual Biology, and Disobedient Consumption in the Vocaloid Community</sub>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+          At the end of the day, I have trouble explaining why I have returned to Hatsune Miku time and time again. <span class="term 68 19 ital">&#9835; Reboot <span class="num">19</span></span> by <span class="term 34 20">JimmyThumbP <span class="num">20</span></span> was the first song to recruit me at eleven years old—it had a striking coming- of-age story with a fully animated music video that played like a short film. I definitely cried the first time I watched it. I fell back in love with Vocaloid again in high school, where I had (and still have) on my iTunes eight different versions of <span class="term 15 21">DECO*27's <span class="num">21</span></span> <span class="term 18 22 ital">&#9835; Ghost Rule <span class="num">22</span></span>. I would spend hours poring over YouTube videos with no more than a few thousand views each, alone but cozy in this small corner of the internet. Six years later, within twenty-four hours of landing in Tokyo for the first time, I was on the bullet train some 200+ miles West of Osaka to celebrate Miku’s sixteenth birthday. I watched from the far back corner of a warehouse amongst thousands of fans as a life-sized hologram of a teal-haired anime girl materialized onto stage and began to sing. I sat so far back that Miku was only a blurry figure in my line of vision—much more visible to me was the sea of colored glow sticks that the fans waved to the beat in uncanny unison. This array of lights rose and fell like a singular breathing organism as the crowd chanted select lyrics in one thundering voice. Each song was transformed through this chorus of fans as I reexperienced Miku’s music again for the first time.
+
+          <br><br>
+          That was the first time I had witnessed the Vocaloid community as a physical, embodied presence that overwhelmed a space through sheer mass alone. Growing up Chinese-American in the United States, my interest in East Asian popular media was a lonely one. What I found refreshing about <span class="term 5 23">anime <span class="num">23</span></span> came off as strange and pointless to my American peers. I learned to find camaraderie online through forums and YouTube, where Vocaloid naturally lived and blossomed, and I discovered Miku in turn. This time, however, my Americanness was the barrier, as the community thrived most in East Asian circles while the English-speaking community was small and outdated. I won’t belabor the loneliness of a third-culture upbringing, which can surely become an exhausted narrative at times, but I do believe it made finding solace in unfamiliar spaces a survival skill. It’s unsurprising then that I found Miku herself as a companion.
+          <br><br>
+
+
+          <h1>Introduction </h1>
+          Hatsune Miku was created in 2007 by <span class="term 12 24">Crypton Future Media Inc.  <span class="num">24</span></span> as a Vocaloid, a digital voice synthesizer software that allows users to create artificial singing voices. She represents the voice bank of actress Saki Fujita through the image of a twin tailed 16-year-old virtual idol. Miku’s age is one of only a handful of parameters initially specified about her— the rest of her character, including her background, personality, motivations, etc. are decided by fans through Vocaloid’s unique crowd-sourced model. In other words, fans are the creators of Miku’s 100,000+ songs and 1,000,000 artworks, and have full reign to interpret her image however they want. This network of fan-produced media is at the core of Miku’s popularity and is made possible by Crypton’s custom PiaPro copyright laws, which allow free usage of Miku’s character as long as the user does not profit from it. <span class="cit 1">I</span> While this allows for a creative space relatively untainted by economic incentive, the reality is that the vast majority of fans do not make any money from their creations while Miku herself generates millions in revenue. Such policies enable Crypton to use Miku to secure corporate partnerships with companies like Dominoes Pizza, Toyota, and Google while the labor of developing Miku’s image is outsourced to fans.
+
+          <div class="imgContainer">
+      			<img src="assets/miku_3.png" class="imgFormat">
+      			<div class="imgCaption">Hatsune Miku’s V2 box art</div>
+      		</div>
+
+          <br><br>
+          It is no mistake either that Miku’s flexible identity is grounded first and foremost in the image of a cute teenage girl, a reflection of <span class="term 54 26 ital">moe <span class="num">26</span></span> aesthetics and marketing power. Patrick W. Gailbraith describes moe as “a euphoric response to fantasy characters” that, while not always the case, often consist of “youthful, innocent girls.”<span class="cit 2">II</span> Characters classified as moe represent a “pure” ideal that is “unpolluted” by reality—they are flattened, two-dimensional surfaces that allow for the elaboration of fantastical desires and virtual possibilities. At the same time, they are passive images that allow for an ideal of femininity that is unthreatening, vulnerable, and devoid of the grossness of flesh. There is ample discussion out there on the gender issues reflected through the moe form as well as the tendency for outside audiences, especially in Western spheres, to overrepresent the most extreme perversions of what is often a platonic desire.<span class="cit 3">III</span> I am more interested here in exploring how Miku’s particular existence as a virtual, malleable form has the ability to subvert the relationships of power that govern her moe image while inspiring similar potential in the lives of her fans and users. Although inevitably subject to the commercial interests of the music industry, Miku’s crowd-sourced model allows fans to project their own desires onto fluid virtual images like Miku. Thus, Miku becomes a digital proxy through which fans can elaborate playful fantasies beyond their own bodily capacities. This creates a space of narrative possibility that overcomes the anxieties of an embodied identity, and in which fans can begin to reimagine their own relationship to hierarchies of control.
+          <br><br>
+
+          <h1>Writing Hybridity Onto the “Blank Page”</h1>
+          <br>
+          Miku’s success traces back to her origins in a community-based culture. Vocaloid software does not require knowledge of sheet music, allowing anyone to create a functional melody within the user interface in minutes. Vocaloid music’s primary sharing platform <span class="term 58 27">Niconico <span class="num">27</span></span> functions similar to Youtube in that anyone can create an account, upload videos, and comment. As a result, amateur producers are behind many of Miku’s most popular tracks. Miku’s success also stems from her incredibly diverse range of music. Even if <span class="term 12 28">Crypton <span class="num">28</span></span> primarily intended Miku to sing pop,<span class="cit 4">IV</span> many Miku songs fall outside of the genre and push narrative convention. As a character, Miku’s personality ranges from a self-centered brat who considers herself a “princess” in <span class="term 99 29 ital">&#9835; World is Mine <span class="num">29</span></span> to a meek, pure-hearted girl in love in <span class="term 50 30 ital">&#9835; Melt <span class="num">30</span></span>. She appears in a variety of settings, from the Westernization of Japan during the Meiji Restoration in <span class="term 75 31 ital">&#9835; Senbonzakura <span class="num">31</span></span> to the computer where she is installed in <span class="term 85 32 ital">&#9835; The Disappearance of Hatsune Miku -DEAD END- <span class="num">32</span></span> . Miku also sings everything from heavy metal in <span class="term 55 33 ital">&#9835; Mukuro Attack <span class="num">33</span></span> to opera in the experimental Vocaloid production <span class="term 86 34 ital">&#9835; THE END <span class="num">34</span></span>. Her flexibility as a “blank page,” as described by Crypton’s CEO Itoh Hiroyuki,<span class="cit 5">V</span> is the source of her popularity as creators impose their own interpretations onto her as a character, voice, and piece of software.
+          <br><br>
+
+          <div class="imgContainer">
+      			<video class="imgFormat" muted>
+      	  		<source src="assets/senbonzakura_clip.mp4" type="video/mp4">
+      			</video>
+      			<div class="imgCaption">
+      				<button class="mute">unmute all</button>
+      				<button class="restart">restart</button> <br> <br>
+      				Still from Senbonzakura by Kurousa-P
+      			</div>
+      		</div>
+
+
+          As a virtual figure, Miku creates meaning through the flatness of her moe form, which creates space for the elaboration of fantasy. Kyle Davidson describes this as “an indication [she] is not ordinary life . . . but something extraordinary that allows for the possibility of higher orders of abstraction.” He continues:
+          <br>
+          <div class="pull">The closer to reality a representation is, the less opportunity there is for a viewer to reinterpret the sign and create the play fantasy. There are holographic representations of real, albeit deceased, artists like Prince. The representation of Prince has a modality that is high, meaning the hologram is more indexical to its referent. The Hatsune Miku hologram, with a low modality, has a more symbolic relationship to a referent that is an abstract concept (an artificially intelligent, singing, android girl). Play creates a ‘figurative space instantiated by communicative interactions that semiotically shape the evolution of meaning among its participants as learning.’<span class="cit 6">VI</span> </div>
+          <br>
+          Miku’s virtual, two-dimensional character is the site of potential. Her lack of context creates a surface in which many fantasy forms can exist simultaneously— she is at once a spoiled princess and a shy schoolgirl, a revolutionary leader and a digital artifact. As Galbraith writes, the essence of <span class="term 54 35 ital">moe <span class="num">35</span></span> is “a response to the virtual possibilities of characters outside the bounds of reality.” But Miku is also unique from the typical moe form in that the consumers of her image also have a direct role of creating it—the fan-produced fantasy is made true through the lack of a given ‘truth’ to her character. As an embodiment of the narratives of her creators, Miku can thus serves as a digital proxy through which fans can elaborate playful fantasies beyond the capacity of their own bodily and social capabilities. For some, Miku gives a voice to their own sentiments. Popular producer <span class="term 83 36">syudou <span class="num">36</span></span> describes in an interview with <span class="term 12 37 ">Crypton <span class="num">37</span></span> how his breakthrough moment with <span class="term 32 38 ital">&#9835; Jama <span class="num">38</span></span> came from the realization that writing “cute songs, idol-type songs” to fit Miku’s “cute” voice did not resonate with the community. Rather, “if I was honest with myself, Hatsune Miku would come along with me.”<span class="cit 7">VII</span> For others, creating with Miku allows one to access the cultural capital of Miku’s character. When asked about his favorite Vocaloid in another interview with Crypton, producer <span class="term 67 39 ">r-906 <span class="num">39</span></span> names Miku, citing: “Hatsune Miku is a massive and universal culture that is already complete. Even people starting new, though, are able to take hold of this great power.”<span class="cit 8">VIII</span> By nature of her crowd-sourced foundation, Miku carries with her the affective traces of an entire collective of people—she is at once “ontological, shifting, multiple, and relational: not the core of the individual, but the engine of relation...”<span class="cit 9">IX</span> With Miku, creators like syudou begin to form “new hybrid identities” as “virtual cyborgs” built from an amalgamate of creator and creation.<span class="cit 10">X</span> Thus, one cannot conceptualize her independent from her community. Miku is as much of a reflection of her fans as her fans create, reflect, and are Miku themselves.
+
+          <div class="imgContainer">
+      			<video class="imgFormat" muted>
+      	  		<source src="assets/popipo_clip.mp4" type="video/mp4">
+      			</video>
+      			<div class="imgCaption">
+      				<button class="mute">unmute all</button>
+      				<button class="restart">restart</button> <br> <br>
+      				Still from PoPiPo by Lamaze-P
+      			</div>
+      		</div>
+
+          <br><br>
+          Creators use Miku to explore a range of messages through their music. On one hand, they can be unapologetically playful—<span class="term 64 40 ital">&#9835; PoPiPo <span class="num">40</span></span> is a near-nonsensical yet wildly popular song about drinking vegetable juice: its absurd premise, repetitively catchy lyrics, and corresponding dance have spawned countless covers and memes that place it in the <span class="term 96 41">Vocaloid Hall of Legends <span class="num">41</span></span> (for songs exceeding 1,000,000 views on Niconico).<span class="cit 11">XI</span> By contrast, many other songs use Miku as a medium to discuss more serious themes. <span class="term 79 42 ital">&#9835; Slow Motion <span class="num">42</span></span> is an upbeat, cheerful song with a music video (MV) full of bright pastel colors—despite this, its lyrics reflect on a life of regret while grappling with the inevitably of death. In an interview with the creator of <span class="ital">Slow Motion</span>, <span class="term 62 43 ">Pinnochio-P <span class="num">43</span></span> describes his interest in Miku’s non-human nature as something with “expressive potential,” adding, “since I often write lyrics from an outside perspective, this really suits this kind of lyrics.” When the interviewer follows up with a question about Pinnochio-P’s often “cynical and pessimistic lyrics,”<span class="cit 12">XII</span> Pinnochio-P responds that his intention with such lyrics is not to be cynical merely for the sake of it, but rather to spark conversation on more serious topics that he finds “interesting” (omoshiroi).<span class="cit 13">XIII</span> The fact that many mainstream songs like Slow Motion deal with such darker subject matter behind energetic melodies may speak to the resonance of these themes among fans, such that they can exist plainly in a catchy, popular beat. To Pinocchio-P, Miku’s non-human nature offers a sort of neutrality that allows him to express more abstracted, “bird’s-eye” (fukanshi) claims as opposed to reflecting the personal emotions of an individual. This, as well as the sweeping popularity of Pinnochio-P’s works, suggests the earnest truth of many darker themes in popular Vocaloid tracks as well as Miku’s capacity to carry these cultural subtexts. When asked about using Miku as a form of expression, Pinnochio-P continues: <br>
+
+          <div class="pull"> If I had someone else sing, I would probably adjust things to suit them. I think this would put the brakes on the lyrics. So, I think it is really true that I would not have been able to express myself if VOCALOID did not exist.<span class="cit 14">XIV</span></div>
+
+          <div class="imgContainer">
+      			<video class="imgFormat" muted>
+      	  		<source src="assets/slowmotion_clip.mp4" type="video/mp4">
+      			</video>
+      			<div class="imgCaption">
+      				<button class="mute">unmute all</button>
+      				<button class="restart">restart</button> <br> <br>
+      				Still from Slow Motion by Pinnochio-P. He illustrated and animated the music video in addition to writing and producing the song.
+      			</div>
+      		</div>
+          <br><br><br><br>
+
+        </div>
+      </div>
+
+      <div class="pageCit">
+        <div class="cit 1"> <sup>I</sup> Ian Condry, “Hatsune Miku: Virtual Idol, Media Platform, and Crowd-Sourced Celebrity.” In Introducing Japanese Popular Culture, ed. by Tony Slade and Alisa Freedman, 123-133. Routledge, 2018.  </div>
+        <div class="cit 2"> <sup>II</sup> Galbraith’s “Moe” and Daniel Black’s “The Virtual Ideal: Virtual idols, Cute Technology and Unclean Biology” are great places to read more. </div>
+        <div class="cit 3"> <sup>III</sup> Patrick W. Galbraith, “Moe: Exploring Virtual Potential in Post-Millennial Japan,” electronic journal of contemporary japanese studies, October 31, 2009, https://www.japanesestudies.org.uk/articles/2009/Galbraith.html. </div>
+        <div class="cit 4"> <sup>IV</sup> Patrick W. Galbraith, “Moe: Exploring Virtual Potential in Post-Millennial Japan,” electronic journal of contemporary japanese studies, October 31, 2009, https://www.japanesestudies.org.uk/articles/2009/Galbraith.html. </div>
+        <div class="cit 5"> <sup>V</sup> PCondry, “Virtual Idol” Freedman, 123-133. Routledge, 2018.  </div>
+        <div class="cit 6"> <sup>VI</sup> Davidson, “Crowd Sourced Pop Idol.” 5.Freedman, 123-133. Routledge, 2018. </div>
+        <div class="cit 7"> <sup>VII</sup> “Vocalo Producers with VOCALOID – syudou –.” VOCALOID, January 17, 2023. https://www.vocaloid.com/en/creator/creator_en_003/. </div>
+        <div class="cit 8"> <sup>VIII</sup> “Vocalo Producers with VOCALOID – R-906 –.” VOCALOID, July 25, 2023. https://www.vocaloid.com/en/creator/creator_007/. </div>
+        <div class="cit 9"> <sup>IX</sup> Hilary Bergen, “Animating the Kinetic Trace: Kate Bush, Hatsune Miku, and Posthuman Dance.” </div>
+        <div class="cit 10"> <sup>X</sup> Magnum C. Nadal, “Real Virtuality: An Examination of Digital Identity and the Ethical Boundaries and Benefits of Appropriation in ‘Real’: Concerto for Vocaloid.” 15. Order No. 10785362, California State University, Long Beach, 2018. http://librarycat.risd.edu/dissertations-theses/real-virtuality-examination-digital-identity/docview/2088897827/se-2. </div>
+        <div class="cit 11"> <sup>XI</sup> Contributors to Vocaloid Wiki. “Hall of Legend.” Vocaloid Wiki. Accessed December 10, 2023. https://vocaloid.fandom.com/wiki/Category:Hall_of_Legend. </div>
+        <div class="cit 12"> <sup>XII</sup> “Vocalo Producers with VOCALOID – Pinocchiop –.” VOCALOID, January 17, 2023. https://www.vocaloid.com/en/creator/creator_en_004/. </div>
+        <div class="cit 13"> <sup>XIII</sup> Ibid. </div>
+        <div class="cit 14"> <sup>XIV</sup> Ibid. </div>
+
+      </div>
+
+      <div class="pageEmpty"></div>
+
+      <div class="pageNav">
+        <div class="scroll">
+    			<div class="scrollText"></div>
+    		</div>
+    		<div> <img src="assets/nav.png" class="scrollImg" style="height: 97vh"></div>
+      </div>
+    </div>
+
+    <!-- armLeft -->
+    <div class="page armLeft hideDisplay">
+      <div class="pageContent">
+        <div class="pageText">
+          <br><br>
+          <h1>Growing Up with Miku</h1>
+          <sub> A Conversation with Ryan Yan </sub>
+      		<br><br><br><br><br><br><br><br><br><br><br><br>
+
+      		<h2> Discovering the World of Vocaloid </h2>
+      		<div class="speaker1"> Christine Wang: How did you first discover Vocaloid?
+      		</div>
+
+      		<div class="speaker2"> Ryan Yan: I’m trying to remember right now. It was definitely on YouTube. I’m trying to remember a specific song. It might have been through some anime YouTubers at the time. They would make “Top 10 Vocaloid” song lists, like, “Top 10 Darkest Vocaloid Songs.” And then there would be like, “Top 50 Fastest Vocaloid Songs,” and I’d watch that. I vividly remember the song <span class="term 85 64 ital">&#9835; Disappearance of Hatsune Miku <span class="num">64</span></span> .</div>
+
+      		<div class="speaker1"> CW: Yes! I love that song! </div>
+
+      		<div class="speaker2"> RY: I would rewatch the music video for that. At that time, I was also really into watching those piano videos where the keys are coming down the screen and people are playing it. And there was a video like, “How to play Disappearance of Hatsune Miku on Piano, LEVEL: IMPOSSIBLE!” I think from there it just sent me into a rabbit hole.</div>
+
+          <div class="speaker1"> Yeah, I remember those. It was always the “darkest” as well, like “Top 10 Darkest.” </div>
+
+          <div class="speaker2"> RY: Like oooh, so edgy!</div>
+
+          <div class="speaker1"> CW: Do you remember your first impression of Vocaloid? How old were you?</div>
+
+          <div class="speaker2"> RY: It was middle school. I’m gonna say fifth grade, probably, was the beginning. I don’t know if I had a first impression. I just thought it was really cool. Right now, I feel like the impression would be like, “Oh, she’s not real... You’re listening to a robot voice,” but I feel like back then, I was so young; none of it mattered. I was just like, “This is a thing, and it’s cool.” I remember first discovering Miku and then seeing that there was this Vocaloid world where there were all these other people. I think what really got me hooked was when people would write narratives around these fictional characters, these singers, where it would seem like they were real characters. I think that’s when it got really interesting.</div>
+
+          <div class="speaker1"> CW: What sorts of narratives?</div>
+
+          <div class="speaker2"> RY: I remember this one song, something-Snow-White. She has her snow witch outfit, and she transforms into a bunch of other outfits. </div>
+
+          <div class="speaker1"> CW: Oh, this one, <span class="term 80 65 ital">&#9835; The Snow White Princess Is <span class="num">65</span></span> ? This video from 10 years ago? </div>
+
+          <div class="imgContainer">
+      			<video class="imgFormat" muted>
+      	  		<source src="assets/snowwhite_clip.mp4" type="video/mp4">
+      			</video>
+      			<div class="imgCaption">
+      				<button class="mute">unmute all</button>
+      				<button class="restart">restart</button> <br> <br>
+      				Still from The Snow White Princess Is by Noboru-P.
+      			</div>
+      		</div>
+
+          <div class="speaker2"> RY: Yeah. I remember I was reading the lyrics and people were like, “Oh my God, it’s so sad.” I don’t remember what she was singing about, but I was like, wow, she has real emotions. Yeah, I think seeing stuff like that. <span class="term 37 66 ">Rin <span class="num">66</span></span>  had a song, <span class="term 88 19 ital">&#9835; Tokyo Teddy Bear <span class="num">19</span></span> where she was a runaway child or something. And I was like, “Whoa, what? She’s so edgy!” as a kid or whatever. Just stuff like that.</div>
+
+          <div class="speaker1"> CW: I love Tokyo Teddy Bear! And that producer Neru  68    specifically, I was really into. Also a lot of edgy stuff. What do you think kept you engaged with Vocaloid? </div>
+
+          <div class="speaker2"> RY: I guess how flexible it was. At that time, because I was super into anime, I had to like the anime to like the people in them because I knew what context they were in. But with Miku, she was a persona that could be projected onto different worlds. Seeing her in all these different states kept it interesting. Like, maybe I didn’t like this one song and this one way that the artists drew her, but then this other artist could draw her in a different way that I really enjoyed. So there’s just more to grab and cling on to.</div>
+
+          <div class="speaker1"> CW: Was there any space that you really didn’t like? That just wasn’t your taste. </div>
+
+          <div class="speaker2"> RY: I don’t know if there was a space. More specifically, it was the way people tuned Miku—there are certain tunings that I just cannot listen to. And then there’s this one producer <span class="term 53 69 ">Mitchie M <span class="num">69</span></span>  who tuned her to sound like a human. I remember they had these crazy music videos too. Not only the way that Miku was tuned, but the way she was illustrated. You know <span class="term 94 70">V2 Miku, V3, Miku <span class="num">70</span></span> , and the different designs? I just gravitated to some more than the others.</div>
+
+          <div class="speaker1"> CW: What is your favorite part about Vocaloid?</div>
+
+          <div class="speaker2"> RY: The community. I don’t know how much I’m driven by nostalgia when I say this, but going onto old Vocaloid videos and seeing that there’s a group of people who enjoy this—like when I went to <span class="term 51 71 ital">Miku Expo <span class="num">71</span></span> and saw that there were other people banging their heads to this VR projection—it just felt really nice to be there as a prepubescent boy. It was just a nice space to be in. </div>
+
+          <div class="speaker1"> CW: Had you been to any other concerts at the time? Were you into any other sorts of music communities? </div>
+
+          <div class="speaker2"> RY: I think I really liked <span class="term 65 72 ">Porter Robinson <span class="num">72</span></span> , which was Miku adjacent because he uses Vocaloid in some of his songs. When I was into Vocaloid back then, I even downloaded the program and was messing around with it. This is before I learned Japanese, so I was just trying to make her speak English, which then you realize that she can’t. </div>
+
+          <div class="speaker1"> CW: How did you download it? Like pirate it? </div>
+
+          <div class="speaker2"> RY: Was it not free? Honestly, I might have pirated it. But I also downloaded the <span class="term 93 73">UTAUloid <span class="num">73</span></span>  which was free.</div>
+
+          <div class="speaker1"> CW: There’s that one red haired one that’s really popular, <span class="term 40 74">Kasane Teto<span class="num">74</span></span> ? I was never really into that. </div>
+
+          <div class="speaker2"> RY: To me, Teto and Miku felt like rivals. Like the UTATUloids were like “Ew, Vocaloid...” I found Teto through this one music video—this was back when YouTube still had annotations. This was a crazy moment for me, because that specific YouTube video was the first time where I saw <span class="term 102 75 ">annotations <span class="num">75</span></span> that came in so fast that they covered the screen—there were just so many. I remember when they got rid of annotations on YouTube, I was like, “It’s over.”
+          <br><br>
+          I had no idea that Vocaloid songs on YouTube were always re-uploaded from <span class="term 58 76 ">Niconico <span class="num">76</span></span> . So when I went to Niconico and saw the <span class="term 14 77 ">scrolling comments <span class="num">77</span></span> , I was like, “Oh, I see where it comes in now.” But with UTAUloid, I didn’t realize that there was a separate community to it. To me, it was just kind of one big merged voice-synthesizing community. Like they’re not under Crypton, they have their own software, and it’s free.
+          </div>
+
+          <div class="imgContainer">
+      			<video class="imgFormat" muted>
+      	  		<source src="assets/danmaku_clip.mp4" type="video/mp4">
+      			</video>
+      			<div class="imgCaption">
+      				<button class="mute">unmute all</button>
+      				<button class="restart">restart</button> <br> <br>
+      				Still of the scrolling comments, or danmaku, on the Niconico upload of Love is War by ryo (supercell).
+      			</div>
+      		</div>
+          <br><br><br>
+
+      		<h2></h2>
+        </div>
+      </div>
+
+      <div class="pageEmpty"></div>
+
+      <div class="pageNav">
+        <div class="scroll">
+    			<div class="scrollText"></div>
+    		</div>
+    		<div> <img src="assets/nav.png" class="scrollImg" style="height: 97vh"></div>
+      </div>
+    </div>
+    <!-- end of armLeft -->
+
+    <!-- armRight -->
+    <div class="page armRight hideDisplay">
+      <div class="pageContent">
+        <div class="pageText">
+          <br><br>
+          <h1>Vocaloid's Uncertain Future</h1>
+          <sub> A Conversation with Ash Ma and Nor Wu </sub>
+      		<br><br><br><br><br><br><br><br><br><br><br><br>
+
+      		<div class="speaker4"> Ash Ma: I feel like we probably have a very different impression of Miku compared to how I feel like you have.</div>
+
+      		<div class="speaker3"> Christine Wang: Well, what’s your impression, I’m curious?</div>
+
+          <div class="speaker5"> Nor Wu: An instrument.</div>
+
+          <div class="speaker3"> CW: Do you guys use Miku to make music?</div>
+
+      		<div class="speaker5"> NW: No, it costs a lot. It’s very very expensive.</div>
+
+          <div class="speaker4"> AM: I feel like at the beginning of the year, it was not that expensive. It was more accessible and developed for people who can’t do vocals.</div>
+
+          <div class="speaker3"> CW: But now it’s more popular?</div>
+
+      		<div class="speaker5"> NW: They also released a more advanced version.</div>
+
+          <div class="speaker4"> AM: Because I feel like my impression is that Miku is not the first Vocaloid-like thing. I got in touch with Vocaloid from that project composed by <p><span class="term 33 110 ">Jin <span class="num">110</span></span> ... </div>
+
+          <div class="speaker3"> CW: <p><span class="term 38 111 ital">&#9835; Kagerou Project <span class="num">111</span></span>? </div>
+
+          <div class="imgContainer">
+      			<video class="imgFormat" muted>
+      	  		<source src="assets/childrenrecord_clip.mp4" type="video/mp4">
+      			</video>
+      			<div class="imgCaption">
+      				<button class="mute">unmute all</button>
+      				<button class="restart">restart</button> <br> <br>
+      				Still from Children Record by Jin, the theme song for Kagerou Project. PV animated by Shidu.
+      			</div>
+      		</div>
+
+      		<div class="speaker4"> AM: And most of those were with <p><span class="term 30 112 ">IA <span class="num">112</span></span>. </div>
+
+          <div class="speaker3"> CW: That was also what got me into Vocaloid. </div>
+
+          <div class="speaker4"> AM: Because Miku is kind of everywhere. She’s kind of like a label that marks a preference—some people prefer using Miku as their voice bank. There’s also so many versions of Miku, so it’s kind of flowing all around.</div>
+
+      		<div class="speaker3"> CW: Yeah I know some people will use a specific version of Miku as how they tune, and you can tell.</div>
+
+          <div class="speaker5"> NW: For me, I think the first time I encountered Miku, I really really like the <span class="term 97 113 ">Vocaloid-P <span class="num">113</span></span>  <span class="term 57 114 ">Neru <span class="num">114</span></span> . </div>
+
+          <div class="speaker3"> CW: I love Neru. Probably one of my favorite producers. There’s him and <span class="term 60 115 ">Orangestar <span class="num">115</span></span> .</div>
+
+          <div class="speaker4"> AM: So Miku was kind of like a byproduct that always came with the songs. </div>
+
+          <div class="speaker3"> CW: So you were more interested in the music first, and it just happened to be made by Vocaloid?</div>
+
+          <div class="speaker4"> AM: Yeah, but then, Miku exploded into an icon. </div>
+
+          <div class="speaker5"> NW: Yeah, like the producers give Miku character. Originally, she is an inorganic figure, but she turns into something organic.</div>
+
+          <div class="speaker3"> CW: I’m really interested in what people’s indiv experiences are with Miku. I feel like there’s also a unique experience from an international community. I know you guys are sort of in-between that—you guys both know Japanese. </div>
+
+          <div class="speaker5"> NW: I feel like my Japanese speaking is better than my English. </div>
+          <br><br><br><br>
+        </div>
+      </div>
+
+
+      <div class="pageEmpty"></div>
+
+      <div class="pageNav">
+        <div class="scroll">
+    			<div class="scrollText"></div>
+    		</div>
+    		<div> <img src="assets/nav.png" class="scrollImg" style="height: 97vh"></div>
+      </div>
+    </div>
+    <!-- end of armRight -->
+
+    <!-- glossary -->
+    <div class="page footer hideDisplay">
+      <div class="footerContent">
+
+        <!-- <div class="footerEntry 1">
+          <div class="footerName"> Hatsune Miku </div>
+          <div class="footerDesc">
+            The most popular Vocaloid character. She is marketed as a 16-year-old virtual idol and is often known for her iconic long blue twintails. She is also known by her code-name “CV01.”
+            <br><br>
+            Appears at <span class="textNumMention"></span>
+          </div>
+        </div>
+
+        <div class="footerEntry 2">
+          <div class="footerName"> Hatsune Miku </div>
+          <div class="footerDesc">
+            The most popular Vocaloid character. She is marketed as a 16-year-old virtual idol and is often known for her iconic long blue twintails. She is also known by her code-name “CV01.”
+            <br><br>
+            Appears at <span class="textNumMention"></span>
+          </div>
+        </div> -->
+
+
+      </div>
+
+
+    </div>
+    <!-- end of armRight -->
+
+
+
     </div>
 
 
@@ -129,11 +578,8 @@
 </div>
 </body>
 
-
-
-
-
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
 
 <script language="javascript" src="script.js"></script>
 
