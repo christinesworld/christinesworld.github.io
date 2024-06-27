@@ -26,7 +26,7 @@ const entries = []; //stores all the index entries
 
 const entryName = [ //array of ALL NAMES
   "96Neko",
-  "ACG",
+  "ACG (Anime, Comics, and Games)",
   "After the Rain",
   String.fromCharCode(9835) + " Alien Alien",
   "Anime",
@@ -93,7 +93,7 @@ const entryName = [ //array of ALL NAMES
   "Project Sekai",
   "r-906",
   String.fromCharCode(9835) + " Reboot",
-  "Rolling Girl",
+  String.fromCharCode(9835) + "Rolling Girl",
   "ryo (supercell)",
   "Ryouseirui",
   "saskure.UK",
@@ -127,11 +127,12 @@ const entryName = [ //array of ALL NAMES
   "Wowaka",
   String.fromCharCode(9835) + " Y-to-Y",
   "YouTube Annotations",
+  "Project Voltage"
 ];
 
 const entryDesc = [ //array of ALL DESCRIPTIONS
   "An utaite well-known for her husky lower range vocals. She is currently a VTuber and often streams video games.",
-  "An acronym for anime, comics (manga), and games subculture.",
+  "A blanket term broadly encompassing anime, comics (manga), and game subcultures. The term is more commonly used in East Asia and usually refers to Japanese anime, comics, and games.  ",
   "A vocal duo consisting of Mafumafu and Soraru, two popular utaite.",
   "https://www.youtube.com/watch?v=2t1NMRse6aI",
   "A broad category of Japanese animated media, namely TV series and movies.",
@@ -141,7 +142,7 @@ const entryDesc = [ //array of ALL DESCRIPTIONS
   "A former Japanese mobile role-playing gacha game.",
   "A song by halyosy featuring a collection of popular utaite at the time, as well as a Vocaloid-only version. It spawned many group utaite covers.",
   "A portmanteau of “costume play”, in which participants dress up in costumes of fictional characters. Cosplay is especially popular in anime, manga, and games subcultures.",
-  "A music technology company based in Sapporo, Japan, and the official licenser of Hatsune Miku. They are the creators of ",
+  "A music technology company based in Sapporo, Japan, and the official licenser of Hatsune Miku. They were the distributors of Vocaloid, the software of which is produced by Yamaha, until 2019, when Crypton stopped releasing voicebanks to Yamaha's Vocaloid engine-editor and developed their own software called Piapro NT. As a result, new versions of Hatsune Miku and others were rebranded as “virtual singers” rather than Vocaloid because of their split from Yamaha's Vocaloid software. It's honestly a bit confusing so don't worry if you feel lost. People still refer to Hatsune Miku as a Vocaloid, though her newer versions are technically no longer affiliated with the name. ",
   "A Japanese video game franchise and anime series. It surrounds various groups of high-school students who are forced into murdering each other by a robotic teddy bear named Monokuma. It was known for its colorful cast of characters.",
   "A system of comments that appear on-screen throughout a video and scroll from left to right. They can be styled in color, size, and location.",
   "A producer known for his energetic pop and rock songs.",
@@ -223,8 +224,8 @@ const entryDesc = [ //array of ALL DESCRIPTIONS
   "People who create human covers of Vocaloid song. The subculture is called utattemita, which rougly translates to “I tried to sing.”",
   "Translates roughly to “I tried to sing” and denotes a subculture of human covers of Vocaloid songs. The people who cover these songs are called utaite.",
   "A Japanese voice synthesizer application similiar to Vocaloid, with its primary difference being that is UTAU is free. UTAU is also synonymous with the characters that represent UTAU voicebanks, or UTAUloids.",
-  "New releases of Miku's voicebank labeled V2 through V4. Starting from V3, Miku also came in different ",
-  "A singing voice synthesizer software product developed by Yamaha and licensed by Crypton Future Media. It was intially released in 2004 with four available voicebanks: Leon, Lola, KAITO, and MEIKO. The software enables users to create an artifical singing voice by typing in lyrics and melody. Each voicebank is represented by an avatar, also referred to as a Vocaloid.",
+  "New releases of Miku's voicebank labeled V2 through V4. Starting from V3, Miku's voicebank also came in different styles called Append designed to give Miku an “expression of colour.” These styles include “Dark”, “Soft”, “Sweet” and “Solid.”",
+  "A singing voice synthesizer software product developed by Yamaha and licensed by Crypton Future Media. It was intially released in 2004 with four available voicebanks. The software enables users to use a voicebank to create an artifical singing voice by typing in lyrics and melody. Each voicebank is represented by an avatar, also referred to as a Vocaloid. In 2019, Crypton split with Yamaha to create their own voice synthesizing engine called Piapro NT as opposed to Yamaha's Vocaloid software. As a result, future voicebank releases from Crypton are no longer called “Vocaloid” due to Yamaha's ownership over the name, leading to a rebranding of the Hatsune Miku voicebank character (which Crypton owns) and other characters as “virtual singers” instead.",
   "A special category of Vocaloid songs that have exceeded 1,000,000 views on Niconico. Similar categories exist for other tiers of viewer counts, with the highest being the Hall of Myths for songs exceeding 10,000,000 views. As of 2024, only 24 songs have attained Hall of Myths status. ",
   "A producer of Vocaloid music. Many producers add “-P” to the end of their aliases to denote this.",
   "A “virtual YouTuber” represented by a digital avatar that animates in real time using motion-tracking software. They exploded in popularity around 2020. They often livestream video games and other activities.",
@@ -232,6 +233,7 @@ const entryDesc = [ //array of ALL DESCRIPTIONS
   "A pivotal Vocaloid producer and musician who considered to be a pioneer in the industry. He passed away from heart failure in 2019.",
   "https://www.youtube.com/watch?v=9pQR4a5sisE",
   "A now-defunct system of on-screen YouTube notes and comments that appear throughout the duration of a YouTube video.",
+  "An official collaboration between Pokémon and Hatsune Miku involving music and artwork. Popular Vocaloid-P such as Giga, DECO*27, and Jin were commissioned to create eighteen Pokémon-themed songs with Hatsune Miku. Illustrators were also commissioned to create designs imagining Hatsune Miku as each Pokémon type trainer (e.g. water type, ghost type, etc.).",
 ];
 
 //assigns names + descs into 'entries' array
@@ -270,12 +272,15 @@ $('.term').click(function(){
   if ($('.sidebarLeft').hasClass('hideDisplay')) {
     $('.sidebarLeft').removeClass('hideDisplay');
     $('.hidePlaylist').text('hide playlist');
+    $('.pageContent').removeClass('smallPadding').addClass('smallPadding');
     playlistCounter = 0;
   }
 
   //adds entry to sidebar entry array
   sidebarEntries[entryCounter] = new entry(entries[posInArray].number, entries[posInArray].name, entries[posInArray].desc);
   entryCounter++;
+
+  $('.sidebarEntries').scrollTop(function() { return this.scrollHeight; });
 });
 
 
@@ -306,16 +311,16 @@ for (let i = 0; i<entries.length; i++){
 
   $('<div></div>').appendTo( $('.footerContent').children('.footerEntry').last() ).addClass('footerDesc');
   $('.footerContent').children('.footerEntry').last().children('.footerDesc').append(
-    entries[i].desc
-    // "<br><br>" +
-    // "Appears at:" + '&nbsp;' + '&nbsp;'
+    entries[i].desc +
+    "<br><br>" +
+    "Appears at:" + '&nbsp;' + '&nbsp;'
   )
 
-  // for (let m = 0; m<entries[i].mention.length; m++) {
-  //   $('.footerContent').children('.footerEntry').last().children('.footerDesc').append(
-  //     '<span class="textNumMention">'+ entries[i].mention[m] + '&nbsp;' + '&nbsp;' + '</span>'
-  //   );
-  // }
+  for (let m = 0; m<entries[i].mention.length; m++) {
+    $('.footerContent').children('.footerEntry').last().children('.footerDesc').append(
+      '<span class="textNumMention">'+ entries[i].mention[m] + '&nbsp;' + '&nbsp;' + '</span>'
+    );
+  }
   //somehow this worked x2
 }
 
@@ -365,6 +370,7 @@ function navAppear (){
     meng ++;
     $('.sidebarLeft').removeClass('hideDisplay');
     $('.hidePlaylist').text('hide playlist');
+    $('.pageContent').removeClass('smallPadding').addClass('smallPadding');
     playlistCounter = 0;
     recenter();
     setTimeout( function() {
@@ -410,7 +416,7 @@ sublabelPos();
 $(window).resize(sublabelPos); //same as above
 
 
-//click nav label
+//click nav label --> ....
 for (let i = 0; i < navLabels.length; i++){
   $(navLabels[i]).click(function(){
     if (onPage == 0) { //to prevent retriggering when on the page
@@ -445,8 +451,6 @@ for (let i = 0; i < navLabels.length; i++){
     }; //if statement
   }); //click
 } //for loop
-
-
 
 
 
@@ -485,6 +489,42 @@ function scrollbarPos (){
 };
 
 setInterval (scrollbarPos, 1);
+
+
+function scrollText() {
+  $('.page:not(.hideDisplay)').find('h2, h1').each(function() {
+    var scrollBodyY = $(this).parents('.pageText').offset().top * -1;
+
+    // $(this).parents('.pageText').css('background-color', 'red');
+
+    var thisH2 = $(this);
+    var nextH2 = $(this).nextAll('h2:first');
+
+
+    // console.log('THIS = ' + thisH2.text());
+    // console.log($(this).position().top);
+    // console.log('NEXT = ' + nextH2.text());
+    //
+    //
+    // console.log('scrollBodyY = ' + scrollBodyY);
+    // console.log("------");
+
+    if ( scrollBodyY > (thisH2.position().top - window.innerHeight/2)
+      &&  scrollBodyY < (nextH2.position().top - window.innerHeight/2)
+      ){
+      $(this).parents('.page').find('.scrollText').text(thisH2.text());
+      $(this).parents('.page').find('.scrollText').css({top: "-" + ($(this).parents('.page').find('.scrollText').height() / 2) + "px"});
+    } else {
+      // $(this).parents('.page').find('.scrollText').text(nextH2.text());
+    }
+    //console.log($('.scrollText').height());
+  });
+
+}
+
+// scrollText();
+setInterval (scrollText, 1);
+
 
 
 
@@ -537,22 +577,6 @@ function imgOverlay () {
 }
 setInterval(imgOverlay, 1);
 
-//video stuff
-// var video = $('video');
-// $('video').trigger('pause');
-//
-// $('video').each(function(){
-//   if (
-//     ( $(this).offset().top) > $(window).scrollTop()
-//     && $(window).scrollTop() > ( $(this).offset().top - window.innerHeight )
-//     ){
-//     $(this).trigger('play');
-//   } else {
-//     $(this).trigger('pause');
-//     //video [0].currentTime = 0;
-//   }
-// });
-
 
 
 
@@ -596,11 +620,12 @@ $('.home').click(function(){
     }, 2200
   );
 
-  var vid = $('.imgBg > .page');
-  for (let i = 0; i < vid.length; i++){
-    vid [i].currentTime = 0;
+  var vidTwo = $('.imgBg > .page');
+  for (let i = 0; i < vidTwo.length; i++){
+    vidTwo [i].currentTime = 0;
   }
 });
+
 
 $('.play').click(function(){
   $('.entryDesc').slideDown();
@@ -622,12 +647,18 @@ $('.hidePlaylist').click(function () {
   $('.sidebarLeft').toggleClass('hideDisplay');
 
   if (playlistCounter == 0) {
+    //playlist is hidden
     $('.hidePlaylist').text('show playlist');
+    $('.pageContent').removeClass('smallPadding');
     playlistCounter = 1;
+
   }
   else {
+    //playlist is showing
     $('.hidePlaylist').text('hide playlist');
+    $('.pageContent').removeClass('smallPadding').addClass('smallPadding');
     playlistCounter = 0;
+
   }
 
   recenter();
@@ -637,36 +668,46 @@ $('.hidePlaylist').click(function () {
 $('.glossary').click(function(){
   onPage = 1;
 
-  $('.landing').addClass('hideDisplay');
 
-  var vid = $('.imgBg').find('.footer');
-  vid [0].play();
+  ///////RESET EVERYTHING///////
 
+  //hide all other pages
+  for (let i = 0; i < navLabels.length; i++){
+    $('.pages').find(navLabels[i]).removeClass('hideDisplay').addClass('hideDisplay');
+  }
+
+  //hide nav page video
   $('.imgBg > .nav').addClass('hideDisplay');
-  $('.imgBg').find('.footer').removeClass('hideDisplay');
 
-  //load page after video plays a bit
-  setTimeout(function() {
-    $('.pages').removeClass('hideDisplay');
-    $('.pages').find('.footer').removeClass('hideDisplay');
-    citPos();
-    $('.page').scrollTop(0, 0);
-  }, 2200);
-
-  //disable home button until page loads
-  $('.home').css("pointer-events","none");
-  setTimeout(function() {
-    $(".home").css("pointer-events","auto");
-  }, 2200);
+  //reset all other pages videos
+  var vid = $('.imgBg > .page');
+  for (let i = 0; i < vid.length; i++){
+    $('.imgBg').find(navLabels[i]).removeClass('hideDisplay').addClass('hideDisplay');
+    vid [i].currentTime = 0;
+  }
 
   //reset nav vid
   var vidNav = $('.imgBg > .nav');
   vidNav [0].currentTime = 0.001; // somehow i need this
-}); //click
 
 
+  ////////TRIGGER FOOTER///////
+  $('.landing').removeClass('hideDisplay').addClass('hideDisplay');
+  $('.pages').removeClass('hideDisplay');
 
+  // var vidTwo = $('.imgBg').find('.footer');
+  // vidTwo [0].play();
 
+  //show footer page
+  // $('.imgBg').find('.footer').removeClass('hideDisplay');
 
-
+  $('.pages').find('.footer').removeClass('hideDisplay');
+  citPos();
+  $('.page').scrollTop(0, 0);
 });
+
+
+
+
+
+}); //end of everything

@@ -1,6 +1,12 @@
 html {
 	scroll-behavior: smooth; /* Makes anchor links scroll smoothly */
 	overflow: auto;
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 * {
@@ -11,13 +17,18 @@ body {
   margin: 0;
   font-family: Routed Gothic Narrow;
   font-size: 16px;
-	/* letter-spacing: 1px; */
 
   background-color: #A8A8A8; /*B1B1B1 A8A8A8*/
 }
 
 p {
-  display: inline;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+p.speaker1, p.speaker2, p.speaker3, p.speaker4, p.speaker5 {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 button {
@@ -25,6 +36,7 @@ button {
 
 	/* new styling */
   font-size: 15px;
+	line-height: 120%;
 
 	font-family: Routed Gothic Narrow;
 
@@ -123,11 +135,18 @@ button.media {
 }
 
 .sidebarEntries {
-	height: calc(100vh - 250px);
-	overflow: scroll;
+	height: calc(100vh - 300px);
+	overflow: auto;
+
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 
 	/* border-bottom: solid;
 	border-width: 1.5px; */
+}
+
+.sidebarEntries::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 .sidebarEntry {
@@ -332,7 +351,7 @@ button.media {
 .sublabel > span {
 	display: inline-block;
 	overflow: visible;
-	width: 200px;
+	width: 250px;
 }
 
 .highlightedText {
@@ -421,13 +440,13 @@ button.media {
 h1 {
 	font-family: Routed Gothic;
   font-size: 30px;
-  margin: 30px 0px 10px;
+  margin: 2em 0px 0.4em;
 }
 
 h2 {
 	font-family: Routed Gothic;
   font-size: 30px;
-  margin: 40px 0px 20px;
+  margin: 2em 0px 0.5em;
 }
 
 sub {
@@ -445,9 +464,13 @@ sub {
 
   display: flex;
   justify-content: center;
-	padding-left: 20px;
+	padding-left: 280px;
 
 	position: relative;
+}
+
+.smallPadding {
+	padding-left: 20px;
 }
 
 .pageText {
@@ -458,7 +481,12 @@ sub {
 .pageText .cit {
 	/* used descendent selector NOT child one!!! */
 	vertical-align: super;
-	font-size: 20px;
+	font-size: 15px;
+
+}
+
+sup {
+	font-size: 15px;
 }
 
 .pull {
@@ -469,9 +497,24 @@ sub {
 	margin-bottom: .5em;
 }
 
+li {
+	list-style: none;
+
+}
+
+ul {
+	list-style-type: none;
+	margin: 0em 0 1em;
+	padding: 0;
+}
+
+ul > p {
+	margin-bottom: 0em;
+}
+
 /*page citations */
 .pageCit {
-	flex: 1 0 10%;
+	flex: 3 0 10%;
 	position: relative;
 	display: flex;
   justify-content: flex-start;
@@ -486,6 +529,7 @@ sub {
 	opacity: 0.7;
 
 	position: absolute;
+	max-width: 10vw;
 }
 
 .pageEmpty {
@@ -504,7 +548,7 @@ sub {
 
 .scroll {
 	background-color: #38dbf3;
-	width: 110px;
+	width: 100px;
 	height: 3px;
 
 	position: absolute;
@@ -517,13 +561,15 @@ sub {
 	font-size: 16px;
 	letter-spacing: 0px;
 	line-height: 120%;
-	width: 100px;
+	text-align: right;
+	text-wrap: balance;
+	width: 120px;
 
-	color: #f93373;
+	color: #38dbf3;
 
 	position: absolute;
 	top: -1em;
-	right: 8.5vw;
+	right: 110px;
 }
 
 .scrollImg {
@@ -537,30 +583,33 @@ sub {
 
 /* ///////////////////////// IMG OVERLAY  ///////////////////////// */
 
+.speaker1, .speaker2 {
+	padding-bottom: 1em;
+}
+
+.speaker3, .speaker4, .speaker5 {
+	padding-bottom: 1em;
+}
+
 .speaker1 {
   padding-right: 40%;
-	padding-bottom: 20px;
 }
 
 .speaker2 {
   padding-left: 40%;
-	padding-bottom: 20px;
 }
 
 .speaker3 {
-  padding-right: 60%;
-	padding-bottom: 20px;
+  padding-right: 40%;
 }
 
 .speaker4 {
-  padding-left: 30%;
-	padding-right: 30%;
-	padding-bottom: 20px;
+  padding-left: 20%;
+	padding-right: 20%;
 }
 
 .speaker5 {
-  padding-left: 60%;
-	padding-bottom: 20px;
+  padding-left: 40%;
 }
 
 .imgContainer {
@@ -583,7 +632,7 @@ sub {
 	position: fixed;
 	bottom: 25px;
 	left: 25px;
-	max-width: 200px;
+	max-width: 210px;
 
 	color: #6AE4F6;
 	font-size: 16px;
